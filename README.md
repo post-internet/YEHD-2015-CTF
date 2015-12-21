@@ -1,6 +1,10 @@
 # YEHD 2015 CTF
 NCC恒例 Year End's Hack Day の CTF用レポジトリです．
 
+以下のURLから実際にflagをsubmitできます．
+
+https://2015-yehd-ctf.meiji-ncc.tech
+
 ## 注意事項
 - 内部には問題見えますが解かないこと
 
