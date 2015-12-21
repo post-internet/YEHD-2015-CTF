@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>YEHD 2015 CTF</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.6/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.6/css/ripples.min.css">
+
+    <script src="//cdn.jsdelivr.net/js-sha3/0.5.1/sha3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es6-promise/3.0.2/es6-promise.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fetch/0.10.1/fetch.min.js"></script>
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.6/js/material.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.6/js/ripples.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+
+    <style>
+      nav.navbar {
+        margin-bottom: 0;
+      }
+      form#login {
+        margin: 5px 0 0 0;
+      }
+      .nav.nav-tabs > .active > a {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+      }
+      main.container {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      div.form-group {
+        margin: 0;
+      }
+      a.toggle-details,
+      a.toggle-details:hover,
+      a.toggle-details:active,
+      a.toggle-details:visited {
+        text-decoration: none;
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">YEHD 2015 CTF</a>
+        </div>
+        <p class="navbar-text" id="userStatus"></p>
+        <form class="navbar-form navbar-right" id="login">
+          <input type="text" name="username" class="form-control" placeholder="Username">
+          <input type="password" name="password" class="form-control" placeholder="Password">
+          <button class="btn btn-sm btn-default btn-raised" data-action="login">Login</button>
+          <button class="btn btn-sm btn-info btn-raised" data-action="signup">Signup</button>
+        </form>
+        <div class="navbar-right" id="logout" style="display:none;">
+          <button class="btn btn-sm btn-info btn-raised">Logout</button>
+        </div>
+      </div>
+    </nav>
+
+    <ul class="nav nav-tabs nav-justified" id="category">
+      <li class="active" data-category="All"><a href="#">All</a></li>
+      <template>
+        <li data-category="{{category}}">
+          <a href="#{{category}}">{{category}}</a>
+        </li>
+      </template>
+    </ul>
+
+    <main class="container" id="qList">
+      <template>
+        <div class="panel panel-success"
+          data-category="{{category}}" data-question="{{question}}">
+          <div class="panel-heading">
+            <a href="#{{question}}" class="toggle-details" data-question="{{question}}">
+              <h3 class="panel-title">
+                <span class="label label-info" style="display: none;">PASSED</span>
+                <span class="label label-default">{{category}}</span>
+                {{name}} ({{point}} pts)
+              </h3>
+            </a>
+          </div>
+          <div class="panel-body">
+            <div class="details" style="display: none;">
+              details
+            </div>
+
+            <form class="row flag-submit" data-question="{{question}}">
+              <div class="col-lg-10">
+                <input type="text" class="form-control" placeholder="Flag">
+              </div>
+              <div class="col-lg-2">
+                <button class="btn btn-info btn-raised">Submit</button>
+              </div>
+            </form>
+
+            <div class="alert alert-info" style="display:none;">
+              Already submitted.
+            </div>
+            <div class="alert alert-warning" style="display:none;"></div>
+          </div>
+        </div>
+      </template>
+    </main>
+
+    <script> $.material.init(); </script>
+    <script src="./script.js"></script>
+  </body>
+</html>
