@@ -1,3 +1,3 @@
-# BeingDebugged (Binary 100pt)
+# BeingDebugged (Binary 150pt)
 
 [file](./file)
