@@ -1,4 +1,4 @@
-# 【公式】 友利 奈緒 Tomori Nao ともり なお トモリ ナオ (TomoriNao 100pt)
+# 【公式】 友利 奈緒 Tomori Nao ともり なお トモリ ナオ (TomoriNao 50pt)
 
 Decode It!!
 ```

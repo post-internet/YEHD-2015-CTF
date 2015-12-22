@@ -1,4 +1,4 @@
-# m@ster (Forensics 200pt)
+# m@ster (Forensics 150pt)
 
 [m@ster.tc](./m@ster.tc)  
 
