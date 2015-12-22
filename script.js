@@ -114,7 +114,7 @@ $(function(){
         $('.alert-warning', $parent).text('Flag is invalid.').show(250);
       } else {
         var message;
-        if (userInfo.submit.filter((s) => s.question === question).length) {
+        if (userInfo.submit.filter(function(s) { return s.question === question; }).length) {
           message = 'Already submitted.';
         } else {
           message = 'Success!!';
